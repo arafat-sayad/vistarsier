@@ -1,0 +1,34 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp3.0</TargetFramework>
+    <NoWarn>$(NoWarn);NU1605</NoWarn>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="log4net.config" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="log4net.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="log4net" Version="2.0.10" />
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+    <PackageReference Include="System.Drawing.Common" Version="4.7.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\VisTarsier.Common\VisTarsier.Common.csproj">
+      <Private></Private>
+    </ProjectReference>
+    <ProjectReference Include="..\VisTarsier.Extensions\VisTarsier.Extensions.csproj" />
+    <ProjectReference Include="..\VisTarsier.MS\VisTarsier.Module.MS.csproj" />
+    <ProjectReference Include="..\VisTarsier.NiftiLib\VisTarsier.NiftiLib.csproj" />
+  </ItemGroup>
+
+</Project>
